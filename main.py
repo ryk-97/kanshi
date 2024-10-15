@@ -72,5 +72,5 @@ while True:
     
     wb.save(excel_file)
     
-    time.sleep(30)  # 3秒待機
+    time.sleep(30)  # 30秒待機
     logging.info("リストを更新しました！")
