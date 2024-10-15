@@ -119,7 +119,7 @@ def update_output():
     logging.info("データを取得中...")
     
     def temp_request():
-        time.sleep(1)
+        time.sleep(0.3)
         session.get(
             url=create_url,
             headers=headers,
@@ -131,7 +131,7 @@ def update_output():
     
     response = session.get(
         url=create_url,
-        headers=headers, timeout=100
+        headers=headers, timeout=10
     )
     
     temp_thread.raise_exception()
@@ -171,6 +171,7 @@ def update_output():
     output.sort(key=lambda x: x[1], reverse=True)
 
 while True:
+    output = [] # 初期化
     update_output()
     
     # Excelファイルが存在しない場合は新規作成
